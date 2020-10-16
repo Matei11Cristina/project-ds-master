@@ -1,0 +1,185 @@
+index:
+  path: /
+  controller: App\Controller\HomeController::index
+
+home:
+  path: /home
+  controller: App\Controller\HomeController::home
+
+register:
+  path: /register/
+  controller: App\Controller\RegisterController::register
+
+login:
+  path: /login/
+  controller: App\Controller\LoginController::login
+logout:
+  path: /logout/
+  controller: App\Controller\LogoutController:main
+errorPage:
+  path: /error/
+  controller: App\Controller\ErrorPageController:main
+
+
+newBill:
+  path: /bill/new/
+  controller: App\Controller\BillController:newBill
+
+listBills:
+  path: /bill/list/
+  controller: App\Controller\BillController:listBills
+
+editBill:
+  path: /bill/edit/{id}
+  controller: App\Controller\BillController::editBill
+
+deleteBill:
+  path: /bill/delete/{id}
+  controller: App\Controller\BillController:deleteBill
+
+payBill:
+  path: /bill/pay/{id}
+  controller: App\Controller\BillController:payBill
+
+
+newMeeting:
+  path: /meeting/new/
+  controller: App\Controller\MeetingController:createMeeting
+listMeeting:
+  path: /meeting/list
+  controller: App\Controller\MeetingController:listMeeting
+editMeeting:
+  path: /meeting/edit/{id}
+  controller: App\Controller\MeetingController:editMeeting
+deleteMeeting:
+  path: /meeting/delete/{id}
+  controller: App\Controller\MeetingController:deleteMeeting
+
+
+
+
+
+addEmployee:
+  path: /employee/add/
+  controller: App\Controller\EmployeeController::add
+
+listEmployees:
+  path: /employee/list/
+  controller: App\Controller\EmployeeController::listEmployees
+
+editEmployees:
+  path: /employee/edit/{id}
+  controller: App\Controller\EmployeeController::editEmployee
+
+deleteEmployees:
+  path: /employee/delete/{id}
+  controller: App\Controller\EmployeeController:deleteEmployee
+
+addCompany:
+  path: /company/add/
+  controller: App\Controller\CompanyController:add
+
+listCompanies:
+  path: /company/list/
+  controller: App\Controller\CompanyController:listCompanies
+
+editCompanies:
+  path: /company/edit/{id}
+  controller: App\Controller\CompanyController:editCompany
+
+deleteCompanies:
+  path: /company/delete{id}
+  controller: App\Controller\CompanyController:deleteCompany
+addCustomer:
+  path: /customer/add/
+  controller: App\Controller\CustomerController:add
+
+listCustomers:
+  path: /customer/list/
+  controller: App\Controller\CustomerController:listCustomers
+
+editCustomers:
+  path: /customer/edit/{id}
+  controller: App\Controller\CustomerController:editCustomer
+
+deleteCustomers:
+  path: /customer/delete{id}
+  controller: App\Controller\CustomerController:deleteCustomer
+newEmail:
+  path: /newEmail
+  controller: App\Controller\EmailController:newEmail
+
+addAttendees:
+  path: /meeting/new/attendees/{meetingId}/
+  controller: App\Controller\MeetingController:addAttendees
+editAttendees:
+  path: /meeting/edit/attendees/{meetingId}/
+  controller: App\Controller\MeetingController:editAttendees
+
+
+addMail:
+  path: /mail/add/
+  controller: App\Controller\MailController:addMail
+
+sendMail:
+  path: /mail/send/{id}
+  controller: App\Controller\MailController:sendMail
+listMail:
+  path: /mail/list
+  controller: App\Controller\MailController:listMail
+
+editMail:
+  path: /mail/edit/{id}
+  controller: App\Controller\MailController:editMail
+
+deleteMail:
+  path: /mail/delete/{id}
+  controller: App\Controller\MailController:deleteMail
+
+
+newPdf:
+  path: /pdf/new/
+  controller: App\Controller\PdfController:newPdf
+
+addOffer:
+  path: /offers/add/
+  controller: App\Controller\OfferController:add
+
+
+listOffers:
+  path: /offers/list/
+  controller: App\Controller\OfferController:listOffers
+
+editOffer:
+  path: /offers/edit/{id}
+  controller: App\Controller\OfferController:editOffer
+
+deleteOffer:
+  path: /offers/delete{id}
+  controller: App\Controller\OfferController:deleteOffer
+
+chooseOffer:
+  path: /offers/choose{id}
+  controller: App\Controller\OfferController:chooseOffer
+
+
+addService:
+  path: /service/add/
+  controller: App\Controller\ServiceController:add
+
+listServices:
+  path: /service/list/
+  controller: App\Controller\ServiceController:listServices
+
+editServices:
+  path: /service/edit/{id}
+  controller: App\Controller\ServiceController:editService
+
+deleteServices:
+  path: /service/delete{id}
+  controller: App\Controller\ServiceController:deleteService
+
+newExcel:
+  path: /excel/new/
+  controller: App\Controller\ExcelController:newExcel
+

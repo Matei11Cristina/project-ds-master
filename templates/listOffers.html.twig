@@ -1,0 +1,83 @@
+{% extends "base1.html.twig" %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+    <p>  </p>
+
+    <div class="container-fluid">
+
+        {#        <div class="col-md-6"> <p> </p></div>#}
+        <div class="container">
+            {% if offers %}
+            <input style="margin-left:2%; " class="form-control" id="myInput" type="text" placeholder="Search...">
+            {#            <div class="col-md-12">#}
+
+                {#                <ul>#}
+                    <div class="container bill">
+                        <table id="myTable" class="employeeTable">
+                            <tr>
+                            <th>Offer No.</th>
+                            <th>Offer Name</th>
+                            <th>Offer Service </th>
+{#                            <th>Offer Service 2</th>#}
+                            <th>Offer Chosen Times</th>
+                            <th>Price</th>
+
+                            </tr>
+                        {% for offer in offers %}
+{#                            {{ offer.services }}#}
+                            <tr>
+                                <td>{{ offer.id }}</td>
+                                <td>{{ offer.offerName }}</td>
+{#                                <td>#}
+{#                            {{ dump(offer.services) }}#}
+{#                                {% for service in offer.services %}#}
+
+                                <td>{{ offer.service.name }}</td>
+{#                            {% endfor %}#}
+{#                                 </td>#}
+{#                                <td>{{ offer.service2 }}</td>#}
+                                <td>{{ offer.chosen }}</td>
+                                <td>{{ offer.price }}</td>
+                                <td><a href="{{ path("chooseOffer", {id: offer.id}) }}"><button class="btn btn-warning">Choose offer</button></a> </td>
+                                <td><a href="{{ path("editOffer", {id: offer.id}) }}"><button class="btn btn-primary">Edit offer</button></a> </td>
+                                <td><a href="{{ path("deleteOffer", {id: offer.id}) }}"><button class="btn btn-danger">Delete offer</button></a> </td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    </div>
+                <a href="{{ path("addOffer") }}"><button class="btn btn-primary">Add Offer</button></a>
+                <div class="row" style="margin-top: 3%">
+                <h3>Forecast</h3><br>
+
+                </div>
+                <div class="row">
+                    You should advertise more: {{ promote.offerName }}
+                </div>
+                {#                </ul>#}
+            {% else %}
+                <h4>No offer to show! <a href="{{ path("addOffer") }}"><button class="btn btn-primary">Add Offer</button></a> </h4>
+            {% endif %} <br><br>
+
+            {#                </div>#}
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
